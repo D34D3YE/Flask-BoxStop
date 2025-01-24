@@ -54,7 +54,9 @@ def sign_up():
         elif len(password1) < 7:
             flash('Passwort muss mindestens aus 7 Zeichen bestehen!', category='error')
         else:
-            new_user = User(email=email, first_name=first_name, password=generate_password_hash(password1, method='sha256'))
+            new_user = User(email=email, 
+                            first_name=first_name, 
+                            password=generate_password_hash(password1, method='pbkdf2:sha256', salt_length=16))
             db.session.add(new_user)
             db.session.commit()
             login_user(new_user, remember=True)
