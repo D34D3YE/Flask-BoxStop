@@ -1,0 +1,43 @@
+{% extends "includes/base.html" %}
+{%block title %}Tankstellen{% endblock %}
+
+{% block content %}
+<html>
+<body class="tank_submit-body">
+  <div class="wrapper-tank-city">
+    <div class="form-group">
+      <h2 id="tank-search">Tankstellen Suchen</h2>
+    </div>
+    <div class="log_in_form">
+      <form action="/tank" method="post">
+        <div class="form-group">
+          <input type="text" pattern="[A-Za-zÄäÖöÜü]+" name="city_tank" placeholder="Stadt" required class="inp-tank">
+          <select id="tank_rad" name="tank_rad" class="inp_tank" required>
+            <option value="1">Radius Wählen!</option>
+            <option value="1">1 KM</option>
+            <option value="2">2 KM</option>
+            <option value="5">5 KM</option>
+            <option value="10">10 KM</option>
+            <option value="20">20 KM</option>
+          </select>
+          <select id="tank_type" name="tank_type" class="inp_tank" required>
+            <option value="diesel">Spritsorte Wählen!</option>
+            <option value="diesel">Diesel</option>
+            <option value="e5">Super</option>
+            <option value="e10">Super E10</option>
+          </select>
+          <select id="tank_sort" name="tank_sort" class="inp_tank" required>
+            <option value="price">Sortieren nach:</option>
+            <option value="price">Preis</option>
+            <option value="dist">Distanz</option>
+          </select>
+        </div>
+        <div class="form-group">
+        <input type="submit" value="Suchen" class="tank-submit-btn" id="btn-tnk">
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
+{% endblock %}

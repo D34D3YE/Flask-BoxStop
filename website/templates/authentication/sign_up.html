@@ -1,0 +1,60 @@
+{% extends "includes/base.html" %}
+{%block title %}Registrieren{% endblock %}
+
+{% block content %}
+<html>
+<body class="body_login">
+    <div class="wrapper-signup">
+        <div class="log_in_form">
+        <form method="POST">
+
+            <h3 align="center">Registrieren</h3>
+            <div class="form-group">
+                <label for="email"class="label-form">Email Addresse</label>
+                <input 
+                    type="email"
+                    class="form-control" 
+                    id="email" 
+                    name="email" 
+                    placeholder="E-Mail Adresse Eingeben"
+                />
+            </div>
+            <div class="form-group">
+                <label for="firstName" class="label-form">Name</label>
+                <input 
+                    type="text"
+                    class="form-control" 
+                    id="firstName" 
+                    name="firstName" 
+                    placeholder="Vornamen Eingeben"
+                />
+            </div>
+            <div class="form-group">
+                <label for="password1"class="label-form">Passwort</label>
+                <input 
+                    type="password"
+                    class="form-control" 
+                    id="password1" 
+                    name="password1" 
+                    placeholder="Passwort Eingeben"
+                />
+            </div>
+            <div class="form-group">
+                <label for="password2"class="label-form">Passwort Bestätigen</label>
+                <input 
+                    type="password"
+                    class="form-control" 
+                    id="password2" 
+                    name="password2" 
+                    placeholder="Passwort Bestätigen"
+                />
+            </div>
+            <br />
+            <button type="submit" class="btn btn-primary">Registrieren</button>
+
+        </form>
+        </div>
+    </div>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,446 @@
+.kachel-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    width: 500px;
+    height: 500px;
+    align-self: center;
+    margin-top: 2%;
+    margin-left: 10%;
+  }
+  
+.kachel {
+    width: 500px;
+    height: 500px;
+    background-color: transparent;
+    backdrop-filter: blur(15px);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 25px;
+    cursor: pointer;
+    align-items: center;
+    border: #9999998c solid;
+  }
+  
+.kachel:hover {
+  background-color: transparent;
+  opacity: 0.8;
+  border: #d5fa02 solid;
+}
+
+
+.erweiterte-informationen {
+    display: none;
+    text-align: center;
+  }
+
+#liste-temperatur {
+
+  text-align: center;
+
+}
+
+#list-erweitert {
+  list-style: none;
+  color: white;
+}
+
+
+.street_start_form{
+
+  border-radius: 25px;
+
+
+}
+
+.sign_up_form {
+  padding-left: 25%;
+  padding-right: 25%;
+  padding-top: 2%;
+}
+
+.form-control{
+  border-radius: 25px;
+  border: 2px solid rgba(179, 174, 174, 0.4);
+}
+
+
+.form-group {
+  font-weight: bold;
+}
+
+.log_in_form {
+  padding-left: 15%;
+  padding-right: 15%;
+  padding-top: 2%;
+}
+
+.styled-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 600px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(20px);
+}
+
+.wrapper-table {
+  position: relative;
+  width: 400px;
+  height: 180px;
+  margin-left: 10%;
+  display: flex;
+  border-radius: 15px;
+  justify-content: center;
+}
+
+.navbar {
+  margin-left: 2%;
+  margin-right: 2%;
+  border-radius: 20px;
+}
+
+.body_login {
+  background: url('../images/background/background_image4.jpg') no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.wrapper-login{
+  position: relative;
+  width: 400px;
+  height: 280px;
+  background: transparent;
+  align-self: center;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  margin: 0 auto;
+  backdrop-filter: blur(10px);
+  margin-top: 10%;
+}
+
+.wrapper-signup{
+  position: relative;
+  width: 400px;
+  height: 480px;
+  background: transparent;
+  align-self: center;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  margin: 0 auto;
+  backdrop-filter: blur(10px);
+  margin-top: 10%;
+}
+
+h3 {
+  font-weight: bold;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#label_login {
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper-ausgabe {
+  position: relative;
+  width: 400px;
+  height: 180px;
+  margin-left: 10%;
+  display: flex;
+  border-radius: 15px;
+  justify-content: center;
+}
+
+
+.navbar-logo {
+  width: 64px;
+  height: 64px;
+}
+
+
+
+.input_ausgabe {
+  width: 400px;
+  border-radius: 20px;
+  margin-top: 2%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.body-ausgaben {
+  background: url('../images/background/background_ausgaben.jpg') no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+#table-col {
+  color: black;
+  font-size: medium;
+}
+
+#table-th{
+  padding-left: 2%;
+  font-weight: bold;
+  font-size: large;
+}
+
+.close {
+  color: red;
+}
+
+#h1-ausgaben {
+  margin-left: 15%;
+  margin-top: 2%;
+}
+
+
+.tank_submit-body {
+  background: url('../images/background/station.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.tank_body {
+  background: url('../images/background/station_result.jpg') ;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+
+.infos-kachel {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bg-dark {
+  border: solid #9999998c;
+  background-color: rgba(31, 30, 29, 0.637)!important;
+  backdrop-filter: blur(5px);
+}
+
+.inp-tank {
+  border-radius: 20px;
+  text-align: center;
+  width: 100%;
+}
+
+#tank-search {
+  padding-left: 15%;
+  color: #000000;
+  font-weight: bold;
+}
+
+.tank-submit-btn {
+  border-radius: 20px;
+  width: 100%;
+}
+
+.tank-submit-btn:hover {
+  background-color: aquamarine;
+}
+
+
+.no-tank-found {
+  display: flex;
+  justify-content: center;
+  backdrop-filter: blur(10px);
+}
+
+#no-tank {
+  font-weight: bold;
+  color: white;
+  font-size: 60px;
+}
+
+#search-again-link {
+  color: aqua;
+}
+
+.show-route-btn {
+  background-color: rgba(97, 109, 74, 0.822);
+  border-radius: 15px;
+}
+
+.show-route-btn:hover {
+  background-color: rgb(56, 56, 156);
+}
+
+.inp-fahr {
+  border-radius: 15px;
+  margin-top: 10px;
+}
+
+.fahrtenbuch-wrapper {
+  position: relative;
+  width: 400px;
+  margin-left: 10%;
+  display: flex;
+  border-radius: 15px;
+  justify-content: center;
+  text-align: center;
+  border: #5b5c54ad solid;
+  backdrop-filter: blur(15px);
+}
+
+.body-fahrt {
+  background-image: url('../images/background/background_desert.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+
+
+
+.body-404 {
+  background-color: #95c2de;
+}
+
+.mainbox {
+  background-color: #95c2de;
+  margin: auto;
+  height: 600px;
+  width: 600px;
+  position: relative;
+}
+
+  .err {
+    color: #ffffff;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 11rem;
+    position:absolute;
+    left: 20%;
+    top: 8%;
+  }
+
+.far {
+  position: absolute;
+  font-size: 8.5rem;
+  left: 42%;
+  top: 15%;
+  color: #ffffff;
+}
+
+ .err2 {
+    color: #ffffff;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 11rem;
+    position:absolute;
+    left: 68%;
+    top: 8%;
+  }
+
+.msg {
+    text-align: center;
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 1.6rem;
+    position:absolute;
+    left: 16%;
+    top: 45%;
+    width: 75%;
+  }
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.login-btn{
+  position: relative;
+  border: none;
+  transition: .4s ease-in;
+  z-index: 1;
+  width: 100%;
+  height: 40px;
+  margin-bottom: 5%;
+  border-radius: 20px;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.login-btn::before,
+.login-btn::after{
+  position: relative;
+  content: "";
+  z-index: -1;
+}
+
+.login-btn:hover{
+  background: #5f5f61;
+  box-shadow: 0 0 5px #72778a, 0 0 25px #969aa8, 
+    0 0 50px #67696e, 0 0 200px #a1a5b1;
+}
+
+#h1-begruessung {
+  text-align: center;
+  color: aquamarine;
+  padding: 2%;
+}
+
+.begruessung {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: #95c2de solid;
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+
+  margin-left: 25%;
+  margin-right: 25%;
+
+  color: aliceblue;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.body-begruessung {
+  background-image: url('../images/background/background_desert.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.wrapper-tank-city{
+  position: relative;
+  width: 400px;
+  background: transparent;
+  align-self: center;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  border-radius: 20px;
+  margin: 0 auto;
+  backdrop-filter: blur(5px);
+  margin-top: 10%;
+  align-items: center;
+}
+
+#p-begrue {
+  text-align: center;
+}
+
+.navbar-dark .navbar-nav .nav-link{
+  color: #95c2de;
+  font-size: 20px;
+}
+
+#tank_rad, #tank_type, #tank_sort {
+  width: 100%;
+  border-radius: 20px;
+  margin-top: 3%;
+  text-align: center;
+}
+

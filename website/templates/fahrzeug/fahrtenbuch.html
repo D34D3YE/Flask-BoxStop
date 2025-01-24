@@ -1,0 +1,92 @@
+{% extends "includes/base.html" %}
+{% block title %}Fahrtenbuch{% endblock %}
+
+{% block content %}
+
+<html>
+
+<body class="body-fahrt">
+<h1 align ="center">Fahrten</h1>
+
+<div class="fahrtenbuch-wrapper">
+  <form method="POST" name="myForm" onsubmit="return validateForm()">
+    <div class="fahrform">
+      <input type="text" name="street_start_form" placeholder="Start Straße" class="inp-fahr" required>
+    </div>
+    <div class="fahrform">
+      <input type="number" name="street_start_hnr_form" placeholder="Hausnummer" class="inp-fahr" required>
+    </div>
+    <div class="fahrform">
+      <input type="number" name="street_start_plz_form" placeholder="Postleitzahl" class="inp-fahr" required>
+    </div>
+    <div class="fahrform">
+      <input type="text" name="street_start_ort_form" placeholder="Ort" class="inp-fahr" required>
+    </div>
+    <div class="fahrform">
+      <input type="number" name="street_start_km_form" placeholder ="Start Kilometer" class="inp-fahr" required>
+    </div>
+    <div class="fahrform">
+      <input type="text" name="street_end_form" placeholder="End Straße" class="inp-fahr" required>
+    </div>
+    <div class="fahrform">
+      <input type="number" name="street_end_hnr_form" placeholder="Hausnummer" class="inp-fahr" required>
+    </div>
+    <div class="fahrform">
+      <input type="number" name="street_end_plz_form" placeholder="Postleitzahl" class="inp-fahr" required>
+    </div>
+    <div class="fahrform">
+      <input type="text" name="street_end_ort_form" placeholder="Ort" class="inp-fahr" required>
+    </div>
+    <div class="fahrform">
+      <input type="number" name="street_end_km_form" placeholder ="End Kilometer" class="inp-fahr" required>
+    </div>
+
+    <div class="fahrform">
+      <input type="submit" value="Fahrt Eintragen" class="inp-fahr">
+    </div>
+  </form>
+</div>
+
+  <table class="styled-table">
+    <thead>
+      <tr>
+        <th>Start Adresse</th>
+        <th>Hausnummer</th>
+        <th>Plz</th>
+        <th>Ort</th>
+        <th>Kilometer bei Beginn</th>
+        <th>End Adresse</th>
+        <th>Hausnummer</th>
+        <th>Plz</th>
+        <th>Ort</th>
+        <th>Kilometer bei Ende</th>
+        <th>Differenz</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for fahrt in fahrten %}
+        <tr>
+          <td>{{ fahrt.street_start }}</td>
+          <td>{{ fahrt.street_start_hnr }}</td>
+          <td>{{ fahrt.street_plz_start }}</td>
+          <td>{{ fahrt.street_start_ort }}</td>
+          <td>{{ fahrt.km_start }}</td>
+          <td>{{ fahrt.street_end }}</td>
+          <td>{{ fahrt.street_end_hnr }}</td>
+          <td>{{ fahrt.street_plz_end }}</td>
+          <td>{{ fahrt.street_end_ort }}</td>
+          <td>{{ fahrt.km_end }}</td>
+          <td>{{ fahrt.km_diff }}</td>
+          <td>
+            <button type="button" class="close" onClick="deleteFahrt('{{ fahrt.id }}')">
+                <span aria-hidden="true">&times;</span>
+            </button>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</body>
+</html>
+{% endblock %}

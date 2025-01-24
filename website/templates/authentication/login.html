@@ -1,0 +1,37 @@
+{% extends "includes/base.html" %}
+{%block title %}Login{% endblock %}
+
+{% block content %}
+<html>
+<body class="body_login">
+<div class="wrapper-login">
+    <div class="log_in_form">
+        <form method="POST">
+            <h3 align="center">Login</h3>
+            <div class="form-group">
+                <label for="email" id="label_login">Email Addresse</label>
+                <input 
+                    type="email"
+                    class="form-control" 
+                    id="email" 
+                    name="email" 
+                    placeholder="E-Mail Adresse"
+                />
+            <div class="form-group">
+                <label for="password1" id="label_login">Passwort</label>
+                <input 
+                    type="password"
+                    class="form-control" 
+                    id="password" 
+                    name="password" 
+                    placeholder="Passwort"
+                />
+            </div>
+            <br />
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+    </div>
+</div>
+    </body>
+</html>
+{% endblock %}

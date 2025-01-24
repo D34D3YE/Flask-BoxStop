@@ -1,0 +1,75 @@
+{% extends "includes/base.html" %}
+{% block title %}Ausgaben{% endblock %}
+
+{% block content %}
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="body-ausgaben">
+<h1 id="h1-ausgaben">Ausgaben</h1>
+<div class="wrapper-ausgabe">
+  <form method="POST">
+    <div class="ausgabeform">
+      <input type="text" name="ausgabe_form_title" placeholder="Bezeichnung der Ausgabe" required class="input_ausgabe">
+    </div>
+    <div class="ausgabeform">
+      <input type="number" name="ausgabe_form_value" placeholder ="Wert der Ausgabe" required class="input_ausgabe">
+    </div>
+    <div class="ausgabeform"> 
+      <input type="date" name="ausgabe_form_date" placeholder ="Datum der Ausgabe" required class="input_ausgabe">
+    </div>
+    <div class="ausgabeform">
+      <select name="ausgabe_form_type" id="ausgabe_form_type" class="input_ausgabe">
+          <option value="Tanken">Tanken</option>
+          <option value="Reparatur">Reparatur</option>
+          <option value="Papierkram">Papierkram</option>
+          <option value="Sonstiges">Sonstiges</option>
+      </select>
+    </div>
+    <div class="ausgabeform">
+      <input type="submit" value="Ausgabe Eintragen" class="input_ausgabe">
+    </div>
+  </form>
+</div>
+  <div class="wrapper-table">
+    <table class="styled-table">
+      <thead>
+        <tr>
+          <th>Ausgabenbezeichnung</th>
+          <th id="table-th">Wert</th>
+          <th id="table-th">Ausgaben-Typ</th>
+          <th id="table-th">Datum</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for ausgabe in ausgaben %}
+          <tr>
+            <td id="table-col">{{ ausgabe.aus_title }}</td>
+            <td id="table-col">{{ ausgabe.aus_value }}€</td>
+            <td id="table-col">{{ ausgabe.aus_type }}</td>
+            <td id="table-col">{{ ausgabe.aus_date }}</td>
+            <td>
+              <button type="button" class="close" onClick="deleteAusgabe('{{ ausgabe.id }}')">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+            </td>
+          </tr>
+        {% endfor %}
+      </tbody>
+      <tfoot>
+        <th>Summe der Ausgaben:</th>
+        <th>{{ summe }} €</th>
+        <th></th>
+        <th></th>
+      </tfoot>
+    </table>
+  </div>
+</body>
+{% endblock %}
+{% block script %}
+{% if redirect_url %}
+<script>
+window.location.href = "{{ redirect_url }}";
+</script>
+{% endif %}
+{% endblock %}

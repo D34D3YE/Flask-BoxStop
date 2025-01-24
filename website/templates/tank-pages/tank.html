@@ -1,0 +1,36 @@
+{% extends "includes/base.html" %}
+{%block title %}Tankstellen{% endblock %}
+
+{% block content %}
+<html>
+  <body class="tank_body">
+    {% if tank_data.stations %}
+      <div class="kachel-container">
+          {% for station in tank_data.stations %}
+                <div class="kachel" onclick="toggleErweiterteInformationen(event)">
+                  <p class="infos-kachel"><b>{{ station.name }}</b></p>
+                  <p class="infos-kachel">{{ station.street }} {{ station.houseNumber }}, {{ station.postCode }} {{ station.place }}</p>
+                  <p class="infos-kachel">Entfernung: {{ station.dist }} km</p>
+                  <div class="erweiterte-informationen">
+                      <p class="infos-kachel">Preise:</p>
+                      <ul id="list-erweitert">
+                          <li>{{sort_display}}: {{ station.price }} €</li>
+                      </ul>
+                      {% if station.isOpen %}
+                          <p class="infos-kachel">Geöffnet</p>
+                      {% else %}
+                          <p class="infos-kachel">Geschlossen</p>
+                      {% endif %}
+                      <button class="show-route-btn" onclick="openGoogleMaps('{{ station.street }} {{ station.houseNumber }}, {{ station.postCode }} {{ station.place }}')"><i class="fa-solid fa-map-location-dot"></i> Route anzeigen</button>
+                </div>
+        </div>
+          {% endfor %}
+      </div>
+    {% else %}
+      <div class="no-tank-found">
+        <p id="no-tank">Keine Tankstellen gefunden, <br> <a href="/tank_submit" id="search-again-link">passe deine Suche an!</a></p>
+      </div>
+    {% endif %}
+  </body>
+</html>
+{% endblock %}
